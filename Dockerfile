@@ -8,7 +8,7 @@ VOLUME /var/lib/mysql
 
 ADD secure.sql /secure.sql
 
-RUN /usr/bin/mysqld_safe --datadir='/var/lib/mysql' --nowatch && mysql < /secure.sql
+RUN /usr/bin/mysqld_safe --datadir='/var/lib/mysql' --nowatch && sleep 5 && mysql < /secure.sql
 
 EXPOSE 3306
 CMD ["/usr/bin/mysqld_safe", "--datadir=/var/lib/mysql"]
