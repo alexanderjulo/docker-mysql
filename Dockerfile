@@ -1,8 +1,8 @@
 FROM base/archlinux
 MAINTAINER Alexander Jung-Loddenkemper <alexander@julo.ch>
 
-RUN pacman -Syu --noconfirm && rm -rf /var/cache/pacman/pkg/*
-RUN pacman -S --noconfirm mariadb && rm -rf /var/cache/pacman/pkg/*
+RUN pacman -Syu --noconfirm --noprogressbar && rm -rf /var/cache/pacman/pkg/*
+RUN pacman -S --noconfirm --noprogressbar mariadb && rm -rf /var/cache/pacman/pkg/*
 
 VOLUME /var/lib/mysql
 
